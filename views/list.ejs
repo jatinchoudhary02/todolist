@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1> <%=vaar%> </h1>
+  </div>
+  <div class="box">
+    <%  for(var i=0;i<newlist.length;i++) { %>
+
+
+<form action="/delete" method="post">
+
+    <div class="item">
+      <input type="checkbox" name="deleteitem" value="<%=newlist[i].name%>" onchange="this.form.submit()" >
+      <p><%=newlist[i].name%></p>
+
+    </div>
+    <input type="hidden" name="topic" value="<%=vaar %>">
+    </form>
+      <%  } %>
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="todo" placeholder="add what to do">
+      <button type="submit" value="<%=vaar %>"  name="btn">+</button>
+    </form>
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>
